@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -126,9 +127,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[color:var(--darkHeader)]">
     
-      <header className="bg-white dark:bg-black shadow-sm transition-colors duration-200">
+      <header className="bg-white dark:bg-black shadow-sm transition-colors duration-200 h-22">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-blue-600 dark:text-white dark:text-shadow-amber-50 ">Car Finder</h1>
+          <div className='flex items-center gap-2'>
+          <Image
+            className='rounded-full'
+            src="/car1.webp"
+            height={65}
+            width={65}
+          />
+          <h1 className="text-2xl font-bold text-blue-600 dark:text-white dark:text-shadow-amber-50 mb-0.5">Car Finder</h1>
+          </div>
           <div className="flex items-center gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
