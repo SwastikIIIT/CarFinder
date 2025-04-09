@@ -2,8 +2,7 @@
 
 A modern, responsive car search application built with Next.js, Tailwind CSS, and shadcn/ui components.
 
-![CarFinder Screenshot](![image](https://github.com/user-attachments/assets/deb5b61b-e6e3-4897-bacb-5f25e8562791)
-)
+![CarFinder Screenshot](https://github.com/user-attachments/assets/0a6357da-8e15-47f9-a8a7-bc348b937c46)
 
 ## ✨ Features
 
