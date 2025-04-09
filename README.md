@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚗 CarFinder
 
-## Getting Started
+A modern, responsive car search application built with Next.js, Tailwind CSS, and shadcn/ui components.
 
-First, run the development server:
+![CarFinder Screenshot](https://via.placeholder.com/800x400)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **Advanced Search & Filtering** - Find the perfect car based on brand, price range, fuel type, and seating capacity
+- **Interactive UI** - Smooth transitions, animations, and real-time updates
+- **Wishlist Functionality** - Save your favorite cars for later viewing
+- **Responsive Design** - Perfect experience on any device
+- **Dark Mode** - Easy on the eyes with toggle between light and dark themes
+- **Pagination** - Browse through large catalogs with ease
+
+## 🛠️ Tech Stack
+
+- **[Next.js 14](https://nextjs.org/)** - React framework for production
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable UI components
+- **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icons
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme management for Next.js
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/car-finder.git
+   cd car-finder
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## 🗂️ Project Structure
+
+```
+car-finder/
+├── app/
+│   ├── api/           # API routes for car data
+│   ├── cars/          # Individual car details pages
+│   ├── page.js        # Home page with car search
+│   └── layout.js      # Root layout with providers
+├── components/
+│   ├── ui/            # shadcn/ui components
+│   ├── CarGrid.jsx    # Car display grid
+│   ├── FilterSidebar.jsx  # Filter controls
+│   ├── LoadingState.jsx   # Loading indicators
+│   ├── Pagination.jsx     # Pagination component
+│   └── WishlistDrawer.jsx # Wishlist interface
+├── lib/               # Utility functions
+├── public/            # Static assets
+└── ...config files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💡 Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Search & Filter Cars
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The main interface allows you to:
+- Search for cars by model or brand name
+- Filter by brand, price range, fuel type, and seating capacity
+- Sort results by price (low to high or high to low)
+- View 10 cars per page with pagination
 
-## Learn More
+### Managing Your Wishlist
 
-To learn more about Next.js, take a look at the following resources:
+- Click the heart icon on any car card to add it to your wishlist
+- Access your wishlist by clicking the Wishlist button in the header
+- Review and remove items from your wishlist
+- Your wishlist persists between visits (saved in localStorage)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Dark Mode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Toggle between light and dark themes using the theme button in the header.
 
-## Deploy on Vercel
+## 🧩 API Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application uses Next.js API routes to handle car data:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `GET /api/cars` - Fetch all cars
+- `GET /api/filter-cars` - Get filtered cars based on query parameters
+- `GET /api/cars/[id]` - Get detailed information about a specific car
+
+## 🔧 Configuration
+
+You can customize various aspects of the application:
+
+1. **Default Filters** - Edit the initial filter state in `app/page.js`
+2. **API Endpoints** - Customize or replace the mock API in `app/api`
+3. **Theme** - Modify Tailwind theme in `tailwind.config.js`
+
+## 📱 Responsive Design
+
+CarFinder is designed to work beautifully on:
+- Desktop computers
+- Tablets
+- Mobile phones
+
+The layout automatically adjusts to provide the best experience on any screen size.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Car data provided by [example-data-source]
+- Icons by [Lucide](https://lucide.dev/)
+- UI components by [shadcn/ui](https://ui.shadcn.com/)
