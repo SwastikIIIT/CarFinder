@@ -2,12 +2,13 @@
 
 A modern, responsive car search application built with Next.js, Tailwind CSS, and shadcn/ui components.
 
-![CarFinder Screenshot](https://via.placeholder.com/800x400)
+![CarFinder Screenshot](![image](https://github.com/user-attachments/assets/deb5b61b-e6e3-4897-bacb-5f25e8562791)
+)
 
 ## ✨ Features
 
 - **Advanced Search & Filtering** - Find the perfect car based on brand, price range, fuel type, and seating capacity
-- **Interactive UI** - Smooth transitions, animations, and real-time updates
+- **Interactive UI** - Smooth transitions,and real-time updates
 - **Wishlist Functionality** - Save your favorite cars for later viewing
 - **Responsive Design** - Perfect experience on any device
 - **Dark Mode** - Easy on the eyes with toggle between light and dark themes
@@ -15,11 +16,10 @@ A modern, responsive car search application built with Next.js, Tailwind CSS, an
 
 ## 🛠️ Tech Stack
 
-- **[Next.js 14](https://nextjs.org/)** - React framework for production
+- **[Next.js 15](https://nextjs.org/)** - React framework for production
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable UI components
 - **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icons
-- **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme management for Next.js
 
 ## 🚀 Getting Started
 
@@ -32,8 +32,8 @@ A modern, responsive car search application built with Next.js, Tailwind CSS, an
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/car-finder.git
-   cd car-finder
+   git clone https://github.com/SwastikIIIT/CarFinder.git
+   cd CarFinder
    ```
 
 2. Install dependencies:
