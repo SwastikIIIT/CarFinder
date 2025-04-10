@@ -64,6 +64,7 @@ car-finder/
 │   ├── car/[id]       # Individual car detail route
 │   ├── page.js        # Home page with car search,filter and car cards
 │   └── layout.js      # Root layout with providers
+│
 ├── components/
 │   ├── ui/                # shadcn/ui components
 │   ├── Header.jsx         # Header with searchbar and wishlist
@@ -73,6 +74,7 @@ car-finder/
 │   ├── LoadingState.jsx   # Loading indicators
 │   ├── Pagination.jsx     # Pagination component
 │   └── WishlistDrawer.jsx # Wishlist interface
+│
 ├── lib/               # Utility functions
 ├── public/            # Static assets
 └── ...config files
