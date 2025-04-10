@@ -107,7 +107,7 @@ The application uses Next.js API routes to handle car data:
 
 - `GET /api/cars` - Fetch all cars
 - `GET /api/filter-cars` - Get filtered cars based on query parameters
-- `GET /api/cars/[id]` - Get detailed information about a specific car
+- `GET /api/view-cars` - Get detailed information about a specific car
 
 ## 🔧 Configuration
 
