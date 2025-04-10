@@ -16,7 +16,7 @@ const Header = ({searchQuery,setSearchQuery,setWishlistOpen,wishlist}) => {
                     src="/car1.jpg"
                     />
                 </div>
-                <h1 className="text-xs md:text-2xl font-bold text-blue-600 dark:text-white mb-0.5">Car Finder</h1>
+                <h1 className="text-xs md:text-2xl font-bold text-blue-600 dark:text-white mb-0.5">NextRide</h1>
             </div>
             <div className="flex items-center gap-2 sm:gap-4">
                 <div className="relative flex-shrink">
