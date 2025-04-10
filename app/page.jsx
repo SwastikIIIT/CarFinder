@@ -24,7 +24,7 @@ export default function Home() {
     seatingCapacity: 8
   });
   const [currentPage, setCurrentPage]=useState(1);
-  const [wishlistOpen,setWishlistOpen]=useState(false);  //flag for opening or closing of wishlist drawer
+  const [wishlistOpen,setWishlistOpen]=useState(false); 
   const [wishlist, setWishlist]=useState([]);
   const carsPerPage=10;
   const [sort,setSort]=useState("");
