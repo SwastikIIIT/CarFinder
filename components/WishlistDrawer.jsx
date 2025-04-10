@@ -48,7 +48,7 @@ export default function WishlistDrawer({open,setOpen,wishlist,toggleWishlist }) 
                     variant="ghost" 
                     size="icon"
                     onClick={()=>toggleWishlist(car)}
-                    className="text-gray-400 hover:text-red-500"
+                    className="text-gray-400 hover:text-red-500 cursor-pointer"
                   >
                     <Trash2 size={16} />
                   </Button>

@@ -20,7 +20,7 @@ export default function CarGrid({cars,wishlist,toggleWishlist }) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-2 right-2 bg-white/80 hover:bg-white rounded-full"
+              className="absolute top-2 right-2 bg-white/80 hover:bg-white rounded-full cursor-pointer"
               onClick={()=>toggleWishlist(car)}
             >
               <Heart 
@@ -42,9 +42,9 @@ export default function CarGrid({cars,wishlist,toggleWishlist }) {
             </div>
           </CardContent>
           
-          <CardFooter className="flex justify-between pt-0">
+          <CardFooter className="flex  pt-0">
             <Link href={`/car/${car.id}`}>
-              <Button variant="outline">View Details</Button>
+              <Button variant="outline" className="cursor-pointer">View Details</Button>
             </Link>
           </CardFooter>
 

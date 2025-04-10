@@ -60,10 +60,10 @@ export default function FilterSidebar({filters,setFilters}) {
               <SelectTrigger>
                 <SelectValue placeholder="All Brands" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent >
                 <SelectItem value="all">All Brands</SelectItem>
                 {brands.map(brand => (
-                  <SelectItem key={brand} value={brand}>{brand}</SelectItem>
+                  <SelectItem key={brand} value={brand} className="cursor-pointer">{brand}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -98,7 +98,7 @@ export default function FilterSidebar({filters,setFilters}) {
               <SelectContent>
                 <SelectItem value="all">All Types</SelectItem>
                 {fuelTypes.map(type => (
-                  <SelectItem key={type} value={type}>{type}</SelectItem>
+                  <SelectItem key={type} value={type} className="cursor-pointer">{type}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -116,7 +116,7 @@ export default function FilterSidebar({filters,setFilters}) {
               <SelectContent>
                 <SelectItem value="all">Any Capacity</SelectItem>
                 {seatingCapacities.map(capacity => (
-                  <SelectItem key={capacity} value={capacity}>{capacity} Seats</SelectItem>
+                  <SelectItem key={capacity} value={capacity} className="cursor-pointer">{capacity} Seats</SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -124,7 +124,7 @@ export default function FilterSidebar({filters,setFilters}) {
           
           <Button 
             variant="outline" 
-            className="w-full"
+            className="w-full cursor-pointer"
             onClick={resetFilters}
           >
             Reset Filters

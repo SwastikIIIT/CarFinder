@@ -1,21 +1,17 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { ArrowUpDown, Search } from 'lucide-react';
+import { ArrowUpDown} from 'lucide-react';
 import CarGrid from '@/components/CarGrid';
 import FilterSidebar from '@/components/FilterSidebar';
 import PaginationComponent from '@/components/Pagination';
 import WishlistDrawer from '@/components/WishlistDrawer';
 import LoadingState from '@/components/LoadingState';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import Image from 'next/image';
+import Header from '@/components/Header';
 
 
 export default function Home() {
-  const {setTheme,theme}=useTheme();
 
   const [filteredCars,setFilteredCars]=useState([]);
   const [loading,setLoading] = useState(true);
@@ -28,12 +24,11 @@ export default function Home() {
     seatingCapacity: 8
   });
   const [currentPage, setCurrentPage]=useState(1);
-  const [wishlistOpen,setWishlistOpen]=useState(false);
+  const [wishlistOpen,setWishlistOpen]=useState(false);  //flag for opening or closing of wishlist drawer
   const [wishlist, setWishlist]=useState([]);
   const carsPerPage=10;
   const [sort,setSort]=useState("");
 
- 
   useEffect(() => {
       const wishlistedItems=localStorage.getItem('carWishlist');
       if (wishlistedItems)
@@ -62,7 +57,6 @@ export default function Home() {
     fetchCars();
   }, []);
 
-  
   useEffect(() => {
     const applyFilters=async()=>{
       setLoading(true);
@@ -95,7 +89,7 @@ export default function Home() {
 
     const debouce=setTimeout(()=>{
         applyFilters();
-    },2000);
+    },500);
     return ()=>clearTimeout(debouce);
   }, [searchQuery,filters]);
 
@@ -119,54 +113,20 @@ export default function Home() {
     setSort(order)
 }
 
-  const indexOfLastCar=currentPage*carsPerPage;
-  const indexOfFirstCar=indexOfLastCar-carsPerPage;
-  const currentCars=filteredCars.slice(indexOfFirstCar,indexOfLastCar);
+  const lastIndex=currentPage*carsPerPage;
+  const firstIndex=lastIndex-carsPerPage;
+  const currentCars=filteredCars.slice(firstIndex,lastIndex);
   const totalPages=Math.ceil(filteredCars.length/carsPerPage);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[color:var(--darkHeader)]">
+    <div className="min-h-screen  bg-gray-50 w-full dark:bg-[color:var(--darkHeader)]">
     
-      <header className="bg-white dark:bg-black shadow-sm transition-colors duration-200 h-22">
-        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-          <div className='flex items-center gap-2'>
-          <Image
-            className='rounded-full'
-            src="/car1.webp"
-            height={65}
-            width={65}
-          />
-          <h1 className="text-2xl font-bold text-blue-600 dark:text-white dark:text-shadow-amber-50 mb-0.5">Car Finder</h1>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-              <Input
-                type="text"
-                placeholder="Search cars by model or brand..."
-                className="pl-10 pr-4 py-2 w-64 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
-                value={searchQuery}
-                onChange={(e)=>setSearchQuery(e.target.value)}
-              />
-            </div>
-            <Button 
-              variant="outline" 
-              onClick={()=>setWishlistOpen(true)}
-              className="flex items-center gap-2 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors"
-            >
-              Wishlist<span className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-xs px-2 py-1 rounded-full transition-colors">{wishlist.length}</span>
-            </Button>
-            <Button
-               variant="outline"
-               className="p-2 rounded-full h-10 w-10 flex items-center justify-center border-gray-500 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200 transition-all"
-               onClick={()=>setTheme(theme==='dark'?'light':'dark')}
-              >{theme==='dark'?<Moon size={18}/>:<Sun size={18}/>}</Button>
-          </div>
-        </div>
+      <header className="bg-white dark:bg-black shadow-sm transition-colors duration-200 h-22 w-full">
+       <Header setSearchQuery={setSearchQuery} setWishlistOpen={setWishlistOpen} searchQuery={searchQuery} wishlist={wishlist}/>
       </header>
 
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 w-full">
         <div className="flex flex-col md:flex-row gap-8">
           
           <div className="w-full md:w-64 shrink-0">
@@ -184,7 +144,7 @@ export default function Home() {
             ) : (
               <>
               <div className='flex items-center justify-between gap-6'>
-                <p className="text-gray-500 mb-4">Showing {indexOfFirstCar+1}-{Math.min(indexOfLastCar,filteredCars.length)} of {filteredCars.length} cars</p>
+                <p className="text-gray-500 mb-4">Showing {firstIndex+1}-{Math.min(lastIndex,filteredCars.length)} of {filteredCars.length} cars</p>
                 <Button 
                   variant="outline"
                   onClick={()=>handleSort()}

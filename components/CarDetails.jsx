@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, Heart, Phone, Share2 } from 'lucide-react';
+import { ChevronLeft, Heart, Info, Phone} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -70,7 +70,8 @@ const CarDetails = ({id}) => {
         <LoadingState/>
       );
     }
-
+ 
+     console.log("Car",car);
   
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-[color:var(--darkHeader)]">
@@ -118,16 +119,18 @@ const CarDetails = ({id}) => {
                   <div className="flex gap-2">
                     <Button
                       variant={inWishlist ? "default" : "outline"}
-                      className={inWishlist ? "bg-red-500 hover:bg-red-600" : ""}     
+                      className={`cursor-pointer ${inWishlist ? "bg-red-500 hover:bg-red-600" : ""}`}     
                       onClick={toggleWishlist}
                     >
                       <Heart className={`mr-2 ${inWishlist ? "fill-white" : ""}`} size={16} />
                       {inWishlist ? "Added to Wishlist" : "Add to Wishlist"}
                     </Button>
-                    <Button variant="outline">
-                      <Share2 className="mr-2" size={16} />
-                      Share
-                    </Button>
+                    <a href={car.url} target='_blank' rel="noreferrer noopener">
+                      <Button variant="outline" className="cursor-pointer">
+                        <Info className="mr-2" size={16} />
+                        More Info
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
