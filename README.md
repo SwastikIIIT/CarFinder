@@ -48,7 +48,7 @@ A modern, responsive car search application built with Next.js, Tailwind CSS, an
    ```bash
    npm run dev
    # or
-   yarn dev
+   yarn next
    # or
    pnpm dev
    ```
@@ -61,16 +61,20 @@ A modern, responsive car search application built with Next.js, Tailwind CSS, an
 car-finder/
 ├── app/
 │   ├── api/           # API routes for car data
-│   ├── cars/          # Individual car details pages
-│   ├── page.js        # Home page with car search
+│   ├── car/[id]       # Individual car detail route
+│   ├── page.js        # Home page with car search,filter and car cards
 │   └── layout.js      # Root layout with providers
+│
 ├── components/
-│   ├── ui/            # shadcn/ui components
-│   ├── CarGrid.jsx    # Car display grid
+│   ├── ui/                # shadcn/ui components
+│   ├── Header.jsx         # Header with searchbar and wishlist
+│   ├── CarGrid.jsx        # Car display grid
+│   ├── CarDetails.jsx     # Individual Car information
 │   ├── FilterSidebar.jsx  # Filter controls
 │   ├── LoadingState.jsx   # Loading indicators
 │   ├── Pagination.jsx     # Pagination component
 │   └── WishlistDrawer.jsx # Wishlist interface
+│
 ├── lib/               # Utility functions
 ├── public/            # Static assets
 └── ...config files
@@ -103,7 +107,7 @@ The application uses Next.js API routes to handle car data:
 
 - `GET /api/cars` - Fetch all cars
 - `GET /api/filter-cars` - Get filtered cars based on query parameters
-- `GET /api/cars/[id]` - Get detailed information about a specific car
+- `GET /api/view-cars` - Get detailed information about a specific car
 
 ## 🔧 Configuration
 
