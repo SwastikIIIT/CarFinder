@@ -1,8 +1,9 @@
-# 🚗 CarFinder
+# 🚗 NextRide
 
 A modern, responsive car search application built with Next.js, Tailwind CSS, and shadcn/ui components.
 
-![CarFinder Screenshot](https://github.com/user-attachments/assets/0a6357da-8e15-47f9-a8a7-bc348b937c46)
+![NextRide Screenshot](https://github.com/user-attachments/assets/98bb7750-5d7e-4265-8ab6-9fcc1ec6ec57)
+
 
 ## ✨ Features
 
