@@ -48,7 +48,7 @@ A modern, responsive car search application built with Next.js, Tailwind CSS, an
    ```bash
    npm run dev
    # or
-   yarn dev
+   yarn next
    # or
    pnpm dev
    ```
