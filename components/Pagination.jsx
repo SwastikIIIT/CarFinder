@@ -2,18 +2,17 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-export default function PaginationComponent({ currentPage, totalPages, setCurrentPage }) {
+export default function PaginationComponent({currentPage,totalPages,setCurrentPage}) {
  
     const pages = [];
     for(let i=0;i<totalPages;i++)
-      pages.push(i); 
+      pages.push(i+1); 
 
   return (
     <Pagination>
