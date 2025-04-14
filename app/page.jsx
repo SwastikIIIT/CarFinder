@@ -163,7 +163,7 @@ export default function Home() {
                   <PaginationComponent 
                     currentPage={currentPage}
                     totalPages={totalPages}
-                    onPageChange={setCurrentPage}
+                    setCurrentPage={setCurrentPage}
                   />
                 </div>
               </>
