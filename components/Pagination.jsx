@@ -9,7 +9,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-export default function PaginationComponent({ currentPage, totalPages, onPageChange }) {
+export default function PaginationComponent({ currentPage, totalPages, setCurrentPage }) {
  
     const pages = [];
     for(let i=0;i<totalPages;i++)
